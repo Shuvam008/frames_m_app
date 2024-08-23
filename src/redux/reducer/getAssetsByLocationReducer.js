@@ -3,7 +3,7 @@ import {
   Member_getAssetByLocationInit,
   Member_getAssetByLocationRejected,
   Member_getAssetByLocationResolved,
-} from '../actions/getAssetByLocationActions';
+} from '../actions/getAssetsByLocationActions';
 
 import {createReducer} from '@reduxjs/toolkit';
 

@@ -12,7 +12,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: COLORS.tertiary,
-    paddingVertical: 10,
+    paddingTop:5,
+    paddingBottom:5,
+    // paddingVertical: 10,
     paddingHorizontal: 15,
   },
   menuButton: {

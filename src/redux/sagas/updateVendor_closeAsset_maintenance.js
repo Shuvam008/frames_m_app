@@ -7,12 +7,13 @@ import {
 import { call, put, takeLatest } from 'redux-saga/effects'
 
 import http from '../../API/http';
+import {API} from '../../constants';
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* updateVendor_closeAsset_maintenance(action) {
   try {
     console.log(" fetchupdateVendor_closeAsset_maintenance action >>>", action);
-    const url = `${process.env.REACT_APP_EAPIURL}/updateMaintenanceService/vendor_close`;
+    const url = `${API}/updateMaintenanceService/vendor_close`;
     console.log(" fetchupdateVendor_closeAsset_maintenance url >>>", url);
     // const url = "http://192.168.1.2:8086/api/assets";
     const method = "patch";

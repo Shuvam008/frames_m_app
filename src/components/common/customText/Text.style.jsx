@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   defaultText: {
     fontFamily: 'DM Sans Medium',
     fontWeight: '500',
-    // color:'white'
+    color:'black'
 
   },
 });

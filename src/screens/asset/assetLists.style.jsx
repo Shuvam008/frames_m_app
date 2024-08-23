@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     // color:'red'
   },
   text:{
-
+    color:'black'
   },
   container: {
     margin:SIZES.xSmall,

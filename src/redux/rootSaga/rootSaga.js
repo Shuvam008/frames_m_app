@@ -25,6 +25,13 @@ import fetchSave_updateLocationSaga from "../sagas/save_updateLocation";
 import fetchaddUserSaga from "../sagas/addUsers";
 import fetchUsersSaga from "../sagas/getUsers";
 import fetchloginSaga from "../sagas/loginUsers";
+import fetchgetAssetByLocationSaga from "../sagas/getAssetsByLocation";
+import fetchgetAssetBySupplierSaga from "../sagas/getAssetsBySupplier";
+import fetchLocationByIdSaga from "../sagas/getLocationById";
+import fetchSupplierByIdSaga from "../sagas/getSuppliersById";
+import fetchAsset_maintenanceBylocationSaga from "../sagas/getAsset_maintenanceByLocation";
+import fetchAsset_maintenanceBySupplierSaga from "../sagas/getAsset_maintenanceBySupplier";
+import fetchSendMailSaga from "../sagas/sendMail";
 
 export default function* rootSaga() {
     yield fork(fetchgetAssetListSaga)
@@ -51,11 +58,21 @@ export default function* rootSaga() {
     yield fork(fetchupdateAssetTransferSaga)
     yield fork(fetchupdateAssetTransferTimeSaga)
     yield fork(fetchupdateAssetTransferReceivedTimeSaga)
-    
+
     yield fork(fetchaddUserSaga)
     yield fork(fetchUsersSaga)
 
     yield fork(fetchloginSaga)
+
+    yield fork(fetchgetAssetByLocationSaga)
+    yield fork(fetchgetAssetBySupplierSaga)
+    yield fork(fetchLocationByIdSaga)
+    yield fork(fetchSupplierByIdSaga)
+
+    yield fork(fetchAsset_maintenanceBylocationSaga)
+    yield fork(fetchAsset_maintenanceBySupplierSaga)
+
+    yield fork(fetchSendMailSaga)
 
     yield fork(watchFetchDataSaga)
     // code after fork-effect

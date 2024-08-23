@@ -27,6 +27,13 @@ import { save_updateLocationReducer } from '../reducer/save_updateLocationReduce
 import { getUserListReducer } from '../reducer/getUsersReducer';
 import { addUserReducer } from '../reducer/addUserReducer';
 import { loginReducer } from '../reducer/loginReducer';
+import { getAssetByLocationReducer } from '../reducer/getAssetsByLocationReducer';
+import { getAssetBySupplierReducer } from '../reducer/getAssetsBySuppliersReducer';
+import { getLocationByIdReducer } from '../reducer/getLocationByIdReducer';
+import { getSupplierByIdReducer } from '../reducer/getSupplierByIdReducer';
+import { getAsset_maintenanceBySupplierReducer } from '../reducer/getAsset_maintenanceBySupplierReducer';
+import { getAsset_maintenanceBylocationReducer } from '../reducer/getAsset_maintenanceByLocationReducer';
+import { sendMailReducer } from '../reducer/sendMailReducer';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -62,13 +69,23 @@ export const store = configureStore({
     UpdateAsset_transferReceivedTime: updateAssetTransferReceivedTimeReducer,
     UpdateAsset_transfer: updateAssetTransferReducer,
 
+    AssetByLocation: getAssetByLocationReducer,
+    AssetBySupplier: getAssetBySupplierReducer,
+    LocationById: getLocationByIdReducer,
+    SupplierById: getSupplierByIdReducer,
+
+    Asset_maintenanceByLocation: getAsset_maintenanceBylocationReducer,
+    Asset_maintenanceBySupplier: getAsset_maintenanceBySupplierReducer,
+
     Login: loginReducer,
+
+    SendMail: sendMailReducer,
   },
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     // getDefaultMiddleware().concat(sagaMiddleware),
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActionPaths: ["payload"], // Ignore the payload path for non-serializable check
+        ignoredActionPaths: ['payload'], // Ignore the payload path for non-serializable check
       },
     }).concat(sagaMiddleware),
 });

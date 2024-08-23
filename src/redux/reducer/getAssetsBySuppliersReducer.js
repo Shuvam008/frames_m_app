@@ -3,7 +3,7 @@ import {
   Member_getAssetBySupplierInit,
   Member_getAssetBySupplierRejected,
   Member_getAssetBySupplierResolved,
-} from '../actions/getAssetBySupplierActions';
+} from '../actions/getAssetsBySuppliersActions';
 
 import {createReducer} from '@reduxjs/toolkit';
 

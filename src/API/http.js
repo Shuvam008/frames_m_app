@@ -32,6 +32,10 @@ const http = async (url, method, payload) => {
       return res;
     } else {
       // console.error('http() non-200 response >>>', res);
+      const res = {
+        status: 800,
+        data: {},
+      };
       return res;
     }
   } catch (error) {
@@ -41,16 +45,16 @@ const http = async (url, method, payload) => {
     };
 
     if (error.response) {
-      console.error('http() error response >>>', error.response);
+      console.log('http() error response >>>', error.response);
       res.status = error.response.status;
       res.data = error.response.data;
     } else if (error.request) {
-      console.error('http() no response >>>', error.request);
+      console.log('http() no response >>>', error.request);
     } else {
-      console.error('http() error setting up request >>>', error.message);
+      console.log('http() error setting up request >>>', error.message);
     }
 
-    console.error('http() error >>>', error);
+    console.log('http() error >>>', error);
     return res;
   }
 };

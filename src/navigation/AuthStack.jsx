@@ -6,7 +6,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 // import RegisterScreen from '../screens/RegisterScreen';
 import Login from '../screens/login/Login';
 import AppStack from './AppStack';
-import DetailsAssets from '../screens/asset/DetailsAssets';
+import VendorDetailsAssets from '../screens/asset/VendorDetailsAssets';
+import LocationDetailsAssets from '../screens/asset/LocationDetailsAssets';
+import AddDocket from '../screens/assets_maintenance/addDocket/AddDocket';
+import VendorDetails_Asset_maintenance from '../screens/assets_maintenance/VendorDetails_Asset_maintenance';
+import LocationDetails_Asset_maintenance from '../screens/assets_maintenance/LocationDetails_Asset_maintenance';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,19 +21,43 @@ const AuthStack = () => {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="AppStack" component={AppStack} />
       <Stack.Screen
-        name="DetailsAssets"
-        component={DetailsAssets}
+        name="LocationDetailsAssets"
+        component={LocationDetailsAssets}
         options={{
-          headerRight: () => (
-            <Ionicons name="log-out" size={30} color="#fff" />
-          ),
-        //   headerStyle: {
-        //     backgroundColor: COLORS.tertiary,
-        //   },
+          headerRight: () => <Ionicons name="log-out" size={30} color="#fff" />,
+        }}
+      />
+      <Stack.Screen
+        name="VendorDetailsAssets"
+        component={VendorDetailsAssets}
+        options={{
+          headerRight: () => <Ionicons name="log-out" size={30} color="#fff" />,
+        }}
+      />
+      <Stack.Screen
+        name="AddDocket"
+        component={AddDocket}
+        options={{
+          headerRight: () => <Ionicons name="log-out" size={30} color="#fff" />,
+        }}
+      />
+      <Stack.Screen
+        name="Vendor_Details_Asset_maintenance"
+        component={VendorDetails_Asset_maintenance}
+        options={{
+          headerRight: () => <Ionicons name="log-out" size={30} color="#fff" />,
+        }}
+      />
+      <Stack.Screen
+        name="Location_Details_Asset_maintenance"
+        component={LocationDetails_Asset_maintenance}
+        options={{
+          headerRight: () => <Ionicons name="log-out" size={30} color="#fff" />,
         }}
       />
       {/* <Stack.Screen name="Register" component={RegisterScreen} /> */}
     </Stack.Navigator>
+  
   );
 };
 
