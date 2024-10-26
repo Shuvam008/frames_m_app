@@ -109,10 +109,13 @@ const AddDocket = ({navigation, route}) => {
 
   Thank you for your cooperation.
 
-  Sincerely,
-  Your Name
-  Your Contact Information
+
 `;
+
+  // Sincerely,
+  // Your Name
+  // Your Contact Information
+
   //After successfully Form submit show a message in gui
   React.useEffect(() => {
     if (!_.isEmpty(createAsset_maintenance?.data) && !createAsset_maintenance.isError) {
@@ -125,8 +128,8 @@ const AddDocket = ({navigation, route}) => {
           to: filteredSuppliersData[0]?.email_id,
           // to: emailId,
           text: text,
-          subject: `Urgent: Non-Functioning Ticket Machine at ${locationCode}`,
-          cc: ['pintudasall@gmail.com'],
+          subject: `Urgent: Non-Functioning Ticket Machine at ${locationCode} [From FRAMES Application]`,
+          cc: [''],
         };
         console.log('payload >>>>>>>>>>>>>>kkkkkkk>>>>>>>>>>>>>', payload.to);
         if (!emailId) {

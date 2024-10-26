@@ -1,19 +1,19 @@
+import {TouchableOpacity, View} from 'react-native';
+
+import AssetLists from '../screens/asset/AssetLists';
+import Asset_maintenance from '../screens/assets_maintenance/Asset_maintenance';
+import Circular from '../screens/circular/Circular';
+import CustomDrawer from '../components/common/drawer/CustomDrawer';
+import Home from '../screens/home/Home';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-
-import CustomDrawer from '../components/common/drawer/CustomDrawer';
-
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // import ProfileScreen from '../screens/ProfileScreen';
 // import MessagesScreen from '../screens/MessagesScreen';
 // import MomentsScreen from '../screens/MomentsScreen';
 // import SettingsScreen from '../screens/SettingsScreen';
 
-import Home from '../screens/home/Home';
-import AssetLists from '../screens/asset/AssetLists';
-import Asset_maintenance from '../screens/assets_maintenance/Asset_maintenance';
-import {TouchableOpacity, View} from 'react-native';
 // import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
@@ -80,6 +80,16 @@ const AppStack = ({navigation, route}) => {
         options={{
           drawerIcon: ({color}) => (
             <Ionicons name="construct-outline" size={22} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Circular"
+        component={Circular}
+        options={{
+          drawerIcon: ({color}) => (
+            <Ionicons name="alert-circle-outline" size={22} color={color} />
+            
           ),
         }}
       />

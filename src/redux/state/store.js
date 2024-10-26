@@ -1,39 +1,39 @@
+import { Save_updateSupplierReducer } from '../reducer/save_updateSupplierReducer';
+import { addUserReducer } from '../reducer/addUserReducer';
 import { configureStore } from '@reduxjs/toolkit'
+import { createAsset_maintenanceReducer } from "../reducer/createAsset_maintenanceReducer";
+import { createAsset_transferReducer } from '../reducer/createAsset_transferReducer';
 import createSagaMiddleware from 'redux-saga';
+import { getAssetByLocationReducer } from '../reducer/getAssetsByLocationReducer';
+import { getAssetBySupplierReducer } from '../reducer/getAssetsBySuppliersReducer';
 import {getAssetListReducer} from "../reducer/getAssetListReducer";
-import rootSaga from "../rootSaga/rootSaga";
+import { getAssetTransferListReducer } from '../reducer/getAssetTransferListReducer';
 import { getAssetTypeReducer } from '../reducer/getAssetsTypeReducer';
+import { getAsset_maintenanceBySupplierReducer } from '../reducer/getAsset_maintenanceBySupplierReducer';
+import { getAsset_maintenanceBylocationReducer } from '../reducer/getAsset_maintenanceByLocationReducer';
+import { getAsset_maintenanceReducer } from "../reducer/getAsset_maintenanceReducer";
+import { getCircularListReducer } from '../reducer/getCircularReducer';
+import { getLocationByIdReducer } from '../reducer/getLocationByIdReducer';
 import { getLocationsReducer } from '../reducer/getLocationsReducer';
+import { getSupplierByIdReducer } from '../reducer/getSupplierByIdReducer';
 import { getSuppliersReducer } from '../reducer/getSuppliersReducer';
+import { getUserListReducer } from '../reducer/getUsersReducer';
 import { geteditAssetReducer } from '../reducer/editAssetReducer';
-import { saveAssetReducer } from '../reducer/saveAssetReducer';
 import { importAssetsReducer } from '../reducer/importAssetsReducer';
+import { loginReducer } from '../reducer/loginReducer';
+import rootSaga from "../rootSaga/rootSaga";
+import { saveAssetReducer } from '../reducer/saveAssetReducer';
 import { saveSubAssetReducer } from '../reducer/saveSubAssetReducer';
+import { save_updateLocationReducer } from '../reducer/save_updateLocationReducer';
+import { sendMailReducer } from '../reducer/sendMailReducer';
 import { subAssetListReducer } from '../reducer/subAssetReducer';
 import { subAssetTypeReducer } from '../reducer/subAssetTypeReducer';
-
-import { getAsset_maintenanceReducer } from "../reducer/getAsset_maintenanceReducer";
-import { createAsset_maintenanceReducer } from "../reducer/createAsset_maintenanceReducer";
+import { updateAssetTransferReceivedTimeReducer } from '../reducer/updateAssetTransferReceivedTimeReducer';
+import { updateAssetTransferReducer } from '../reducer/updateAssetTransferReducer';
+import { updateAssetTransferTimeReducer } from '../reducer/updateAssetTransferTimeReducer';
 import { updateLocation_closeAsset_maintenanceReducer } from "../reducer/updateLocation_closeAsset_maintenanceReducer";
 import { updateVendor_ackAsset_maintenanceReducer } from "../reducer/updateVendor_ackAsset_maintenanceReducer";
 import { updateVendor_closeAsset_maintenanceReducer } from "../reducer/updateVendor_closeAsset_maintenanceReducer";
-import { getAssetTransferListReducer } from '../reducer/getAssetTransferListReducer';
-import { createAsset_transferReducer } from '../reducer/createAsset_transferReducer';
-import { updateAssetTransferTimeReducer } from '../reducer/updateAssetTransferTimeReducer';
-import { updateAssetTransferReceivedTimeReducer } from '../reducer/updateAssetTransferReceivedTimeReducer';
-import { updateAssetTransferReducer } from '../reducer/updateAssetTransferReducer';
-import { Save_updateSupplierReducer } from '../reducer/save_updateSupplierReducer';
-import { save_updateLocationReducer } from '../reducer/save_updateLocationReducer';
-import { getUserListReducer } from '../reducer/getUsersReducer';
-import { addUserReducer } from '../reducer/addUserReducer';
-import { loginReducer } from '../reducer/loginReducer';
-import { getAssetByLocationReducer } from '../reducer/getAssetsByLocationReducer';
-import { getAssetBySupplierReducer } from '../reducer/getAssetsBySuppliersReducer';
-import { getLocationByIdReducer } from '../reducer/getLocationByIdReducer';
-import { getSupplierByIdReducer } from '../reducer/getSupplierByIdReducer';
-import { getAsset_maintenanceBySupplierReducer } from '../reducer/getAsset_maintenanceBySupplierReducer';
-import { getAsset_maintenanceBylocationReducer } from '../reducer/getAsset_maintenanceByLocationReducer';
-import { sendMailReducer } from '../reducer/sendMailReducer';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -80,6 +80,8 @@ export const store = configureStore({
     Login: loginReducer,
 
     SendMail: sendMailReducer,
+
+    GetCircularList: getCircularListReducer
   },
   middleware: getDefaultMiddleware =>
     // getDefaultMiddleware().concat(sagaMiddleware),

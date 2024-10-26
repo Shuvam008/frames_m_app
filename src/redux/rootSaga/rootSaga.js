@@ -1,37 +1,38 @@
 import fetchAssetTypeSaga from "../sagas/getAssetsType";
+import fetchAsset_TransferSaga from "../sagas/getAsset_transfer";
+import fetchAsset_maintenanceBySupplierSaga from "../sagas/getAsset_maintenanceBySupplier";
+import fetchAsset_maintenanceBylocationSaga from "../sagas/getAsset_maintenanceByLocation";
+import fetchAsset_maintenanceSaga from "../sagas/getAsset_maintenance";
+import fetchCircularListSaga from "../sagas/getCircular";
+import fetchLocationByIdSaga from "../sagas/getLocationById";
 import fetchLocationsSaga from "../sagas/getLocations";
-import fetchSuppliersSaga from "../sagas/getSuppliers";
-import fetchgetAssetListSaga from "../sagas/getAssetList";
-import { fork } from 'redux-saga/effects';
-import watchFetchDataSaga from "../sagas/apiSaga";
 import fetchSaveAssetSaga from "../sagas/saveAsset";
-import fetcheditAssetSaga from "../sagas/editAsset";
-import fetchimportAssetsSaga from "../sagas/importAssets";
 import fetchSaveSubAssetSaga from "../sagas/saveSubAsset";
+import fetchSave_updateLocationSaga from "../sagas/save_updateLocation";
+import fetchSave_updateSupplierSaga from "../sagas/save_updateSupplier";
+import fetchSendMailSaga from "../sagas/sendMail";
+import fetchSupplierByIdSaga from "../sagas/getSuppliersById";
+import fetchSuppliersSaga from "../sagas/getSuppliers";
+import fetchUsersSaga from "../sagas/getUsers";
+import fetchaddUserSaga from "../sagas/addUsers";
+import fetchcreateAsset_maintenanceSaga from "../sagas/createAsset_maintenance";
+import fetchcreateAsset_transferSaga from "../sagas/createAsset_transfer";
+import fetcheditAssetSaga from "../sagas/editAsset";
+import fetchgetAssetByLocationSaga from "../sagas/getAssetsByLocation";
+import fetchgetAssetBySupplierSaga from "../sagas/getAssetsBySupplier";
+import fetchgetAssetListSaga from "../sagas/getAssetList";
+import fetchimportAssetsSaga from "../sagas/importAssets";
+import fetchloginSaga from "../sagas/loginUsers";
 import fetchsubAssetListSaga from "../sagas/getSubAssetList";
 import fetchsubAssetTypeSaga from "../sagas/getSubAssetTypeList";
-import fetchAsset_maintenanceSaga from "../sagas/getAsset_maintenance";
-import fetchcreateAsset_maintenanceSaga from "../sagas/createAsset_maintenance";
+import fetchupdateAssetTransferReceivedTimeSaga from "../sagas/updateTransfer_received_timeAsset_transfer";
+import fetchupdateAssetTransferSaga from "../sagas/updateAsset_transfer";
+import fetchupdateAssetTransferTimeSaga from "../sagas/updateTransfer_timeAsset_transfer";
 import fetchupdateLocation_closeAsset_maintenanceSaga from "../sagas/updateLocation_closeAsset_maintenance";
 import fetchupdateVendor_ackAsset_maintenanceSaga from "../sagas/updateVendor_ackAsset_maintenance";
 import fetchupdateVendor_closeAsset_maintenanceSaga from "../sagas/updateVendor_closeAsset_maintenance";
-import fetchAsset_TransferSaga from "../sagas/getAsset_transfer";
-import fetchcreateAsset_transferSaga from "../sagas/createAsset_transfer";
-import fetchupdateAssetTransferSaga from "../sagas/updateAsset_transfer";
-import fetchupdateAssetTransferTimeSaga from "../sagas/updateTransfer_timeAsset_transfer";
-import fetchupdateAssetTransferReceivedTimeSaga from "../sagas/updateTransfer_received_timeAsset_transfer";
-import fetchSave_updateSupplierSaga from "../sagas/save_updateSupplier";
-import fetchSave_updateLocationSaga from "../sagas/save_updateLocation";
-import fetchaddUserSaga from "../sagas/addUsers";
-import fetchUsersSaga from "../sagas/getUsers";
-import fetchloginSaga from "../sagas/loginUsers";
-import fetchgetAssetByLocationSaga from "../sagas/getAssetsByLocation";
-import fetchgetAssetBySupplierSaga from "../sagas/getAssetsBySupplier";
-import fetchLocationByIdSaga from "../sagas/getLocationById";
-import fetchSupplierByIdSaga from "../sagas/getSuppliersById";
-import fetchAsset_maintenanceBylocationSaga from "../sagas/getAsset_maintenanceByLocation";
-import fetchAsset_maintenanceBySupplierSaga from "../sagas/getAsset_maintenanceBySupplier";
-import fetchSendMailSaga from "../sagas/sendMail";
+import { fork } from 'redux-saga/effects';
+import watchFetchDataSaga from "../sagas/apiSaga";
 
 export default function* rootSaga() {
     yield fork(fetchgetAssetListSaga)
@@ -73,6 +74,8 @@ export default function* rootSaga() {
     yield fork(fetchAsset_maintenanceBySupplierSaga)
 
     yield fork(fetchSendMailSaga)
+
+    yield fork(fetchCircularListSaga)
 
     yield fork(watchFetchDataSaga)
     // code after fork-effect
