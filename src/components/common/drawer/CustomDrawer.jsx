@@ -9,12 +9,13 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Member_resetlogin} from '../../../redux/actions/loginActions';
 import React from 'react';
 import Text from '../customText/Text';
+import {logoutUser} from '../../../API/session';
 
 const CustomDrawer = props => {
   const dispatch = useDispatch();
   const Login = useSelector(state => state.Login);
   const {data, isInProgress} = Login;
-  const LocationName = Login.data?.location.location_name;
+  const LocationName = Login.data?.location?.location_name;
   const SupplierName = Login.data?.supplier?.supplier_name;
 
   return (
@@ -78,8 +79,8 @@ const CustomDrawer = props => {
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => {
-            dispatch(Member_resetlogin({}));
+          onPress={async () => {
+            await logoutUser(dispatch); // revoke on server, clear storage, reset Redux
             props.navigation.replace('Login');
           }}
           style={{paddingVertical: 15}}>

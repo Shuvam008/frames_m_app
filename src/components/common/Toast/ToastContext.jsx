@@ -1,4 +1,5 @@
 import React, {createContext, useContext} from 'react';
+
 import Toast from 'react-native-toast-message';
 
 const ToastContext = createContext();

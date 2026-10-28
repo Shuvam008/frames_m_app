@@ -23,7 +23,7 @@ const Home = ({navigation, route}) => {
 
   const Login = useSelector(state => state.Login);
   const {data, isInProgress} = Login;
-  const LocationName = Login.data?.location.location_name;
+  const LocationName = Login.data?.location?.location_name;
   const SupplierName = Login.data?.supplier?.supplier_name;
 
   const AssetsByLocation = useSelector(state => state.AssetByLocation);
